@@ -3,6 +3,7 @@ import { createWalletClient, custom } from "viem";
 import { celoSepolia, CONTRACT_ADDRESS } from "./chain.js";
 import { connectWallet, switchToCelo, walletErrorMessage } from "./wallet.js";
 import EntryList from "./EntryList.jsx";
+import NoticeForm from "./NoticeForm.jsx";
 
 const short = (address) => `${address.slice(0, 6)}...${address.slice(-4)}`;
 const explorer = celoSepolia.blockExplorers.default.url;
@@ -18,6 +19,7 @@ export default function App() {
   const [chainId, setChainId] = useState(null);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
+  const [refreshKey, setRefreshKey] = useState(0);
 
   const refreshChain = useCallback(async () => {
     if (wallet) setChainId(await wallet.getChainId());
@@ -104,7 +106,14 @@ export default function App() {
         {error && <p className="error">{error}</p>}
       </section>
 
-      <EntryList />
+      <NoticeForm
+        wallet={wallet}
+        account={account}
+        canSave={Boolean(wallet && account && onRightNetwork)}
+        onSaved={() => setRefreshKey((k) => k + 1)}
+      />
+
+      <EntryList refreshKey={refreshKey} />
 
       <p className="muted small">
         Contract:{" "}

@@ -53,3 +53,9 @@ button.ghost { background: transparent; color: var(--text); border: 1px solid va
 .entry-top { display: flex; justify-content: space-between; gap: 1rem; align-items: flex-start; }
 .entry-text { font-size: 1.05rem; overflow-wrap: anywhere; }
 .score { flex-shrink: 0; padding: 0.15rem 0.6rem; border-radius: 999px; border: 1px solid var(--accent); color: var(--accent); font-size: 0.85rem; }
+textarea { width: 100%; margin-top: 0.4rem; padding: 0.75rem; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 8px; font: inherit; resize: vertical; }
+.row.between { justify-content: space-between; }
+.result { margin-top: 1rem; padding: 1rem; border: 1px dashed var(--border); border-radius: 10px; }
+.result p { margin: 0.5rem 0; }
+.error-text { color: var(--bad); }
+.ok-text { color: var(--ok); margin: 0.75rem 0 0; }
