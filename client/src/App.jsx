@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { createWalletClient, custom } from "viem";
 import { celoSepolia, CONTRACT_ADDRESS } from "./chain.js";
 import { connectWallet, switchToCelo, walletErrorMessage } from "./wallet.js";
+import EntryList from "./EntryList.jsx";
 
 const short = (address) => `${address.slice(0, 6)}...${address.slice(-4)}`;
 const explorer = celoSepolia.blockExplorers.default.url;
@@ -102,6 +103,8 @@ export default function App() {
         )}
         {error && <p className="error">{error}</p>}
       </section>
+
+      <EntryList />
 
       <p className="muted small">
         Contract:{" "}

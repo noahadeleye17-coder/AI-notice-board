@@ -45,3 +45,11 @@ button:disabled { opacity: 0.6; cursor: not-allowed; }
 .pill.ok { color: var(--ok); border-color: var(--ok); }
 .pill.warn { color: var(--warn); border-color: var(--warn); }
 .error { color: var(--bad); margin: 0.75rem 0 0; }
+.list-head { display: flex; align-items: center; justify-content: space-between; margin-top: 2rem; }
+.list-head h2 { margin: 0; font-size: 1.15rem; }
+button.ghost { background: transparent; color: var(--text); border: 1px solid var(--border); padding: 0.4rem 0.8rem; }
+.entry { margin: 0.75rem 0; padding: 1rem; background: var(--card); border: 1px solid var(--border); border-radius: 12px; }
+.entry p { margin: 0.25rem 0; }
+.entry-top { display: flex; justify-content: space-between; gap: 1rem; align-items: flex-start; }
+.entry-text { font-size: 1.05rem; overflow-wrap: anywhere; }
+.score { flex-shrink: 0; padding: 0.15rem 0.6rem; border-radius: 999px; border: 1px solid var(--accent); color: var(--accent); font-size: 0.85rem; }
